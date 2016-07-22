@@ -1,6 +1,6 @@
 FROM alpine:3.4
 
-MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
+MAINTAINER Marcel Marnitz <marcelmarnitz@googlemail.com>
 
 ENV NGINX_VERSION 1.11.1
 ENV OPENSSL_VERSION 1.0.2g
