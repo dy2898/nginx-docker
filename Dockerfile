@@ -4,7 +4,7 @@ MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
 ENV NGINX_VERSION 1.11.1
 ENV OPENSSL_VERSION 1.0.2g
-EVN OPENSSL_CHACHA https://raw.githubusercontent.com/cloudflare/sslconfig/master/patches/openssl__chacha20_poly1305_draft_and_rfc_ossl102g.patch
+ENV OPENSSL_CHACHA https://raw.githubusercontent.com/cloudflare/sslconfig/master/patches/openssl__chacha20_poly1305_draft_and_rfc_ossl102g.patch
 
 ###################################
 # OPENSSL                         #
@@ -141,6 +141,9 @@ RUN \
 	&& apk add --virtual .nginx-rundeps $runDeps \
 	&& apk del .build-deps \
 	&& rm -rf /usr/src/nginx-$NGINX_VERSION \
+	&& rm -rf /usr/src/openssl-$OPENSSL_VERSION \
+	&& rm -rf /usr/src/nginx-ct-master \
+	&& rm -rf /usr/src/chacha.patch \
 	&& apk add --no-cache gettext \
 	\
 	# forward request and error logs to docker log collector
