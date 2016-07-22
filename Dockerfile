@@ -2,7 +2,7 @@ FROM alpine:3.4
 
 MAINTAINER Marcel Marnitz <marcelmarnitz@googlemail.com>
 
-ENV NGINX_VERSION 1.11.1
+ENV NGINX_VERSION 1.11.2
 ENV OPENSSL_VERSION 1.0.2g
 ENV OPENSSL_CHACHA https://raw.githubusercontent.com/cloudflare/sslconfig/master/patches/openssl__chacha20_poly1305_draft_and_rfc_ossl102g.patch
 
